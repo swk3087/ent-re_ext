@@ -3,20 +3,16 @@
   "name": "엔트리 추가 블럭 모드",
   "version": "1.0",
   "description": "엔트리의 여러 편의성 블록을 추가합니다.",
-  "permissions": ["storage"],
+  "permissions": ["storage", "scripting"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "host_permissions": ["*://*.playentry.org/*"],
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     }
-  },
-  "content_scripts": [
-    {
-      "matches": ["*://*.playentry.org/*"],
-      "js": ["content.js"],
-      "run_at": "document_end",
-      "type": "module"
-    }
-  ]
+  }
 }
