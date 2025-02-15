@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "PlayEntry Script Injector",
+  "version": "1.0",
+  "description": "PlayEntry 사이트에서 특정 스크립트를 실행하는 익스텐션 (팝업으로 ON/OFF 제어)",
+  "permissions": ["storage"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://*.playentry.org/*"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "type": "module"
+    }
+  ]
+}
